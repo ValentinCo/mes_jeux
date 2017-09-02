@@ -14,10 +14,9 @@ $bdd = new PDO('mysql:host=localhost;dbname=mes_jeux;charset=utf8', 'root', 'adm
 
 
 $search = $_POST['search'];
-$variable = intval($search);
 
 $sql= sprintf("SELECT * FROM possession 
-WHERE titre LIKE  '%%%s%%' OR genre LIKE '%%%s%%' OR annee LIKE '%%%d%%' ", $search, $search, $variable);
+WHERE titre LIKE  '%%%s%%' OR genre LIKE '%%%s%%' OR  annee LIKE '%%%s%%'  ", $search, $search, $search);
 
 $reponse= $bdd->query($sql);
 
@@ -52,7 +51,7 @@ while($donnees = $reponse->fetch()){
 <td><?=$donnees['titre']?> </td>
 <td><?=$donnees['genre']?> </td>
 <td><?=$donnees['description']?> </td>
-<td><?=$donnees['année']?> </td>
+<td><?=$donnees['annee']?> </td>
 <td><?=$donnees['auteur']?> </td>
 <td><?=$donnees['note']?> </td>
 <td><?=$donnees['studio']?> </td>

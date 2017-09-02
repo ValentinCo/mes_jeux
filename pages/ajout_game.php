@@ -29,7 +29,7 @@ $studio = htmlspecialchars($_POST['studio']);
 // VALUES ("'.$prenom.'","'.$nom.'","'.$age.'")');
 
 $sql = sprintf('INSERT INTO possession (titre, genre, description, annee, auteur, note, studio) 
-VALUES ("'.$titre.'","'.$genre.'","'.$description.'","'.$annee.'","'.$auteur.'","'.$note.'","'.$studio.'")');
+VALUES ("%s", "%s", "%s", %d, "%s", %d, "%s")', $titre, $genre, $description, $annee, $auteur, $note,$studio);
 
 $reponse = $bdd->query($sql);
 
