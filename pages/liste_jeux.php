@@ -41,7 +41,7 @@ while  ($donnees = $reponse->fetch()){
 <td><?=$donnees['titre']?> </td>
 <td><?=$donnees['genre']?> </td>
 <td><?=$donnees['description']?> </td>
-<td><?=$donnees['année']?> </td>
+<td><?=$donnees['annee']?> </td>
 <td><?=$donnees['auteur']?> </td>
 <td><?=$donnees['note']?> </td>
 <td><?=$donnees['studio']?> </td>
@@ -55,4 +55,6 @@ while  ($donnees = $reponse->fetch()){
     <?php
 }
 
+
+$reponse->closeCursor();
 ?>
