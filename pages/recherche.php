@@ -1,5 +1,3 @@
-
-
 <?php
 //Lance la bdd 'dbname=Nom de la bdd' 'root = nom utilisateur' 'admin= mdp'
 try
@@ -16,11 +14,12 @@ $bdd = new PDO('mysql:host=localhost;dbname=mes_jeux;charset=utf8', 'root', 'adm
 $search = $_POST['search'];
 
 $sql= sprintf("SELECT * FROM possession 
-WHERE titre LIKE  '%%%s%%' OR genre LIKE '%%%s%%' OR  annee LIKE '%%%s%%'  ", $search, $search, $search);
+WHERE titre LIKE  '%%%s%%' OR genre LIKE '%%%s%%' OR  annee LIKE '%%%s%%' OR auteur LIKE '%%%s%%' OR studio LIKE '%%%s%%'",$search, $search, $search, $search, $search);
 
 $reponse= $bdd->query($sql);
 
 ?>
+
 
 <div class="container">
          
@@ -66,3 +65,20 @@ while($donnees = $reponse->fetch()){
     }
     $reponse->closeCursor();
     ?>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <title>Document</title>
+    </head>
+    <body>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
+    </html>

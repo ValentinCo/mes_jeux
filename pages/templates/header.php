@@ -9,6 +9,9 @@
     data-target="#exampleModal" data-whatever="@mdo">Ajouter jeux</a></li>
     <li><a href="?p=home">Accueil</a></li>
     <li><a href="?p=jeux">Liste jeux</a></li>
+    <li><a href="?p=alphabetique">Alphabétique</a></li>
+    <li><a href="?p=date">Année</a></li>
+    <li><a href="?p=note">Note</a></li>
     <li>
     <form method="POST" action="pages/recherche.php" class="navbar-form" role="search">
         <div class="input-group">
